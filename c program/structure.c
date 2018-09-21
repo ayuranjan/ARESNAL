@@ -1,4 +1,4 @@
-#include<stdio.h>
+ #include<stdio.h>
 struct book{
       char title[100];
       char genre[100];
@@ -9,7 +9,6 @@ int main()
 {
     struct book b1;
     input(b1);
-
 
 
 
@@ -28,4 +27,5 @@ int main()
     puts(b1.title);
     puts(b1.author);
     puts(b1.genre);
+
 }

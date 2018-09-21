@@ -10,8 +10,11 @@ int main()
     for(i=0;i<10;i++)
     {
         if(arr[i]== number)
+         {
             count =1;
             pos = i;
+         }
+
     }
     if(count  == 1)
         printf("arr[%d] = %d",pos,number);

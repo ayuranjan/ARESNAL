@@ -2,6 +2,7 @@
 int main()
 {
     int i,pos,arr[100] = {1,2,3,4,5,7,8,9,10},num;
+
     printf("ENter the number to be inserted :");
     scanf("%d",&num);
     printf("ENTER THE POSITION A WHICH NUMBER IS INSERTED :");
