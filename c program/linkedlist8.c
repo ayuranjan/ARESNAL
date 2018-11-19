@@ -1,5 +1,6 @@
 #include<stdio.h>
-#include<malloc.h>
+#include<stdlib.h>
+#include<malloc/malloc.h>
 struct node
 {
     int data;
@@ -106,6 +107,6 @@ struct node *delete_after(struct node *start)
 struct node *delete_list(struct node *start)
 {
     start =NULL;
-    return start;
+    return start;N
 
 };

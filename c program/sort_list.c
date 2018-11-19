@@ -9,6 +9,7 @@ struct node
 struct node *start =NULL;
 struct node *create(struct node *);
 struct node *display(struct node *);
+struct node *sort(struct node *);
 int main()
 {
     int  choice;
@@ -17,7 +18,7 @@ int main()
     {
         printf("1.CREATE A LINKED LIST ");
         printf("2.DISPLAY THW LINKED LIST");
-        printf("3.exit");
+        printf("3.SORT 4.EXIT");
         printf("ENTER YOUR CHOICE ");
         scanf("%d",&choice);
         switch(choice)
@@ -29,7 +30,7 @@ int main()
                     break;
         }
     }
-    while(choice != 4);
+    while(choice != 5);
     return 0;
 
 }
@@ -73,6 +74,28 @@ struct node *display(struct node *start)
         printf("\t%d",ptr ->data);
         ptr = ptr ->next;
 
+    }
+    return start;
+}
+struct node *sort(struct node *start)
+{
+    struct node *ptr1,*ptr2;
+    int temp;
+    ptr1=start;
+    while(ptr1->next !=NULL)
+    {
+        ptr2 = ptr1 ->next;
+        while(ptr2 !=NULL)
+        {
+            if(ptr1 ->data > ptr2 ->data)
+            {
+                temp =ptr1 ->data;
+                ptr1 ->data = ptr2 -> data;
+                ptr2 ->data =temp;
+            }
+            ptr2 = ptr2 ->next;
+        }
+        ptr1 = ptr1 ->next;
     }
     return start;
 }
