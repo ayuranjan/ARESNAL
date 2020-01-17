@@ -1,0 +1,17 @@
+import tensorflow as tf
+#node1 = tf.constant(3.0,tf.float32)
+#node2 = tf.constant(4.0)
+#sess = tf.Session()
+#print(sess.run([node1,node2]))
+a = tf.constant(5)
+b =tf.constant(2)
+c =tf.constant(3 )
+
+d =tf.multiply(a,b)
+e = tf.add(c,b)
+f = tf.subtract(d,e)
+s1  = tf.Session()
+File_Writer = tf.summary.FileWriter('/Users/ayushranjan/Desktop/codes/ARESNAL/python-program/graph',s1.graph)
+lol = s1.run(f)
+print(s1.run([d,e,f]))
+print(lol)
