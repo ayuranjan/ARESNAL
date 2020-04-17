@@ -1,2 +1,2 @@
 # ARESNAL
-ALL CODES 
+Coding practice folder 
