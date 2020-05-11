@@ -184,7 +184,87 @@ class tree:
                     q.append(temp.right)
                 print(temp.data,end = " ")
             q.pop(0)
+    def levelorderbylevel(self,root):
+        if root is None:
+            return
+        q =[]
+        q.append(root)
+        while q :
+            count = len(q)
+            for i in range(0,count):
+                temp = q.pop(0)
+                print(temp.data,end =" ")
+                if temp.left is not None :
+                    q.append(temp.left)
+                if temp.right is not None :
+                    q.append(temp.right)
+            print("")
+
+    def leftview(self,root):
+        if root is None :
+            return 
+        q =[]
+        q.append(root)
+        q.append(None)
+        while(len(q) >0):
+            if len(q) == 1 and q[0] is None :
+                break
+            if len(q) > 1 and q[0] is None :
+                q.append(None)
+                print("")
+
+            else :
+                temp = q[0]
+                if temp.left is not None :
+                    q.append(temp.left)
+                if temp.right is not None :
+                    q.append(temp.right)
+            q.pop(0)
+    #global MAX = 99999           
+    def floorof(self ,root ,key):
+        if root is None :
+            return #MAX 
+        if (root.data == key) : 
+            return root.data  
+        if (root.data > key) : 
+            return self.floorof(root.left, key)  
+        else :
+            floorValue = self.floorof(root.right, key)  
+            return floorValue if (floorValue <= key) else root.data  
+    def printSibling(self,root):
+        # Code here
+        if root is None :
+                return 
+        q =[]
+        q1 = []
+        q.append(root)
+        #q1.append(root)
+        q.append(None)
+        while(len(q) >0):
+                if len(q) == 1  and q[0] is None :
+                    if len(q1 ) == 1 :
+                        print(q1[0],end=" ")
+                    break
+                if len(q) > 1 and q[0] is None :
+                    q.append(None)
+                    if len(q1 ) == 1 :
+                        print(q1[0],end=" ")
+                        q1.pop()
+                    else :
+                        q1.clear()
+                else :
+                    temp = q[0]
+                    if temp.left is not None :
+                        q.append(temp.left)
+                    if temp.right is not None :
+                        q.append(temp.right)
+                    q1.append(temp.data)
                 
+                    
+                q.pop(0)
+
+
+
     
 root = tree(10)
 root.insert(root,6)
@@ -225,3 +305,11 @@ root.spiraltraversal(root)
 
 print("level order line by line is ")
 root.levelorderlinebyline(root)
+
+print("level order line by line is ")
+root.levelorderbylevel(root)
+
+
+#print(root.floorof(root,15))
+print(" non siblings are ")
+root.printSibling(root)

@@ -119,8 +119,19 @@ def diameter(root):
     height_of_tree = height(root, ans)  
     return ans[0] 
       
-        
+       # sum of leaf node 
+def sumLeaf(root):
+    '''
+    :param root: root of given tree.
+    :return: sum of leaf nodes
+    '''
+    # code here
 
+    if root is None: 
+        return 0
+    if (root.left is None and root.right is None): 
+        return root.data
+    return sumLeaf(root.left)+ sumLeaf(root.right)
 
 
 
